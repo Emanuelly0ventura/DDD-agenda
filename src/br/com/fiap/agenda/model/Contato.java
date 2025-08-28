@@ -1,5 +1,7 @@
 package br.com.fiap.agenda.model;
 
+import br.com.fiap.agenda.enums.TipoContatoEnum;
+
 public class Contato {
     private int  id;
     private String nome;
@@ -59,5 +61,8 @@ public class Contato {
     }
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public void setTipo(TipoContatoEnum tipoContatoEnum) {
     }
 }
