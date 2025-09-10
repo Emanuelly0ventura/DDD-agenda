@@ -118,6 +118,7 @@ public class ContatoDao {
         }
     }
 
+    //pergunta a prof pq usar ou não usar o String sql!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     //metodo de exlusão em java, vamos apenas deletar dados especificos
     public void excluirContato(int id){
@@ -135,9 +136,22 @@ public class ContatoDao {
         }
     }
 
+    //alguns comandos que escrevemos aqui vão ser direcionados como comandos no sql
+    //executeQuery() é para: SELECT, SHOW(em alguns não todos os bancos) e DESCRIBE
+    //executeUpdate() é para:  INSERT, UPADATE e DELETE
+    //ResultSet ele é: um objeto que tem todas as linhas retornadas pelo banco.
+    //Depois de executar, você percorre o ResultSet com .next() para acessar os dados.
+    //Exemplo:ResultSet rs = ps.executeQuery();
+    //if(rs.next()){
+
+
+
+
+//=============================================================================================
 
     //esse foi atividade e ja ta corrigido por ela(professora)
-    //Método que exiba todos os contatos por tipo.
+    //Metodo que exibe todos os contatos por tipo.
+
     public List<Contato> buscarPorTipo(String tipo){
         List<Contato> contatos = new ArrayList<>();
         conexao = ConnectionFactory.obterConexao();
