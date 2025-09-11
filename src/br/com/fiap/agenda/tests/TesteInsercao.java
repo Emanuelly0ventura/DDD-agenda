@@ -3,6 +3,7 @@ package br.com.fiap.agenda.tests;
 import br.com.fiap.agenda.dao.ContatoDao;
 import br.com.fiap.agenda.enums.TipoContatoEnum;
 import br.com.fiap.agenda.model.Contato;
+import br.com.fiap.agenda.model.Endereco;
 
 import java.util.Scanner;
 
@@ -11,6 +12,7 @@ public class TesteInsercao {
     public static void main(String[] args) {
         Contato contato = new Contato();
         ContatoDao dao = new ContatoDao();
+        Endereco endereco = new Endereco();
 
         Scanner leitor = new Scanner(System.in);
         Scanner leitorTexto = new Scanner(System.in);
@@ -33,7 +35,11 @@ public class TesteInsercao {
             case 2: contato.setTipo(TipoContatoEnum.FAMILIAR);break;
             case 3: contato.setTipo(TipoContatoEnum.PROFISSIONAL);break;
         }
+        System.out.println("Digite o codigo do endereco: ");
+        int cod = leitor.nextInt();
 
+
+        contato.setEndereco(contato);
         dao.cadastrarContato(contato);
         System.out.println("Contato foi adicionado com sucesso!");
 

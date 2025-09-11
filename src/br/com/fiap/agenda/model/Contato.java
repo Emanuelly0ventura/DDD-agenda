@@ -9,6 +9,7 @@ public class Contato {
     private String email;
     private String instagram;
     private String tipo;
+    private String endereco;
 
     @Override
     public String toString() {
@@ -18,6 +19,7 @@ public class Contato {
                 "\nEmail: " + email +
                 "\nInstagram: " + instagram  +
                 "\nTipo do Contato: " + tipo +
+                "\nEndereco: " + endereco +
                 "\n===================================";
     }
 
@@ -64,5 +66,13 @@ public class Contato {
     }
 
     public void setTipo(TipoContatoEnum tipoContatoEnum) {
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 }
