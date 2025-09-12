@@ -1,6 +1,7 @@
 package br.com.fiap.agenda.dao;
 import br.com.fiap.agenda.enums.TipoContatoEnum;
 import br.com.fiap.agenda.model.Contato;
+import br.com.fiap.agenda.model.Endereco;
 import oracle.jdbc.proxy.annotation.Pre;
 
 import java.sql.Connection;
@@ -48,6 +49,7 @@ public class ContatoDao {
                     " where ID_CONTATO = ?");
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
+            EnderecoDao enderecoDao = new EnderecoDao();
 
             if(rs.next()){
                 contato.setId(rs.getInt(1));
@@ -56,6 +58,10 @@ public class ContatoDao {
                 contato.setEmail(rs.getString(4));
                 contato.setInstagram(rs.getString(5));
                 contato.setTipo(rs.getString(6));
+                int codigo = rs.getInt(7);
+                Endereco endereco = new Endereco();
+                endereco = enderecoDao.BuscarPorCodigo(codigo);
+                contato.setEndereco(endereco);
 
             }
             ps.close();
@@ -68,6 +74,10 @@ public class ContatoDao {
 
 
     }
+
+
+
+
     //
     public List<Contato> listar(){
         List<Contato> contatos = new ArrayList<>();
